@@ -331,7 +331,22 @@ public class CalculatorTest {
 		resultVal = calculator.calculate(orderMap);
 		assertEquals("assertion failed as value Calculation wrong", 115.0D, resultVal, 0.00);
 	}
-
+	/**
+	 * With Empty OderLine List. 
+	 * Expected:Should calculate total price
+	 * for all items considering Quantity.
+	 * 
+	 * @throws Exception
+	 *             throws Exception if Assertion fail.
+	 */
+	@Test
+	public void testCase14() throws Exception {
+		Map<String, Order> orderMap = new LinkedHashMap<String, Order>();
+		Order orderObj = new Order();
+		orderMap.put("Order 1", orderObj);
+		resultVal = calculator.calculate(orderMap);
+		assertEquals("assertion failed as value Calculation wrong", 0.0D, resultVal, 0.00);
+	}
 	
 
 }
